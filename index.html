@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskBoard Académico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>TaskBoard Académico</h1>
+    <p>Organiza tus actividades académicas</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Nueva tarea</h2>
+
+      <form id="formulario-tarea">
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" placeholder="Ej: Informe de laboratorio">
+
+        <label for="curso">Curso</label>
+        <input type="text" id="curso" placeholder="Ej: Física I">
+
+        <label for="prioridad">Prioridad</label>
+        <select id="prioridad">
+          <option value="Alta">Alta</option>
+          <option value="Media" selected>Media</option>
+          <option value="Baja">Baja</option>
+        </select>
+
+        <p id="mensaje-error" class="mensaje-error"></p>
+
+        <button type="submit">Agregar tarea</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Mis tareas</h2>
+
+      <div class="contadores">
+        <p><strong id="contador-pendientes">0</strong> Pendientes</p>
+        <p><strong id="contador-completadas">0</strong> Completadas</p>
+      </div>
+
+      <div class="filtros">
+        <button class="filtro activo" data-filtro="todas">Todas</button>
+        <button class="filtro" data-filtro="pendientes">Pendientes</button>
+        <button class="filtro" data-filtro="completadas">Completadas</button>
+      </div>
+
+      <ul id="lista-tareas" class="lista-tareas"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
