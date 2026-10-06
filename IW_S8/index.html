@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Planner</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Travel Planner</h1>
+    <p>Planificador académico de destinos</p>
+  </header>
+
+  <main>
+    <div class="columna">
+      <section class="panel">
+        <h2>Buscar país</h2>
+
+        <form id="formulario-busqueda">
+          <label for="input-pais">Nombre del país</label>
+          <div class="fila">
+            <input type="text" id="input-pais" placeholder="Ej: Perú, Japón, Alemania">
+            <button type="submit">Buscar</button>
+          </div>
+        </form>
+
+        <p id="mensaje-estado" class="estado oculto"></p>
+      </section>
+
+      <section id="resultado" class="panel oculto">
+        <div class="pais">
+          <img id="bandera-pais" alt="">
+          <div>
+            <h2 id="nombre-pais"></h2>
+            <ul class="datos">
+              <li><strong>Capital:</strong> <span id="capital-pais"></span></li>
+              <li><strong>Región:</strong> <span id="region-pais"></span></li>
+              <li><strong>Población:</strong> <span id="poblacion-pais"></span></li>
+              <li><strong>Moneda:</strong> <span id="moneda-pais"></span></li>
+            </ul>
+            <button id="boton-agregar">Agregar a mi plan</button>
+          </div>
+        </div>
+
+        <h3>Países limítrofes</h3>
+        <ul id="lista-vecinos" class="vecinos"></ul>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Mi plan de destinos</h2>
+
+      <p id="plan-vacio" class="plan-vacio">Aún no agregaste destinos. Busca un país y pulsa "Agregar a mi plan".</p>
+      <ul id="lista-destinos" class="destinos"></ul>
+
+      <div class="resumen">
+        <p>Destinos seleccionados <strong id="cantidad-destinos">0</strong></p>
+        <p>Presupuesto total <strong id="presupuesto-total">USD 0.00</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/presupuesto.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

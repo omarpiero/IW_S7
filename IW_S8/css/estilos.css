@@ -1,0 +1,257 @@
+:root {
+  --color-fondo: #f1f5f9;
+  --color-panel: #ffffff;
+  --color-texto: #1e293b;
+  --color-suave: #64748b;
+  --color-borde: #e2e8f0;
+  --color-primario: #0f766e;
+  --color-cargando: #1d4ed8;
+  --color-error: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+header {
+  padding: 24px 16px;
+  background: var(--color-primario);
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 4px 0 0;
+  opacity: 0.85;
+}
+
+main {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.panel {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--color-panel);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+/* Formulario de búsqueda */
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.fila {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.fila input {
+  flex: 1;
+  min-width: 0;
+}
+
+.input-error {
+  border-color: var(--color-error);
+  background: #fef2f2;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-primario);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Estados de la búsqueda */
+.estado {
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.estado-cargando {
+  background: #dbeafe;
+  color: var(--color-cargando);
+}
+
+.estado-error {
+  background: #fee2e2;
+  color: var(--color-error);
+}
+
+.oculto {
+  display: none;
+}
+
+/* Tarjeta del país */
+.pais {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.pais img {
+  width: 160px;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+}
+
+.datos {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+  line-height: 1.8;
+}
+
+.vecinos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vecinos li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--color-fondo);
+  font-size: 0.9rem;
+}
+
+.vecinos img {
+  width: 24px;
+  border-radius: 2px;
+}
+
+/* Plan de destinos */
+.plan-vacio {
+  color: var(--color-suave);
+}
+
+.destinos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.destino {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid var(--color-borde);
+  border-left: 6px solid var(--color-primario);
+  border-radius: 10px;
+}
+
+.destino img {
+  grid-row: span 3;
+  align-self: start;
+  width: 48px;
+  border-radius: 4px;
+}
+
+.destino h3 {
+  grid-column: span 2;
+  margin: 0;
+}
+
+.destino label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.destino input {
+  width: 100%;
+}
+
+.subtotal {
+  margin: 0;
+  font-weight: 600;
+}
+
+.boton-eliminar {
+  justify-self: end;
+  background: #fee2e2;
+  color: var(--color-error);
+}
+
+.resumen {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.resumen p {
+  flex: 1;
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--color-fondo);
+  text-align: center;
+}
+
+.resumen strong {
+  display: block;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .pais {
+    flex-direction: column;
+  }
+}
